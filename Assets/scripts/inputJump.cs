@@ -55,7 +55,7 @@ public class inputJump : MonoBehaviour
             VerticalForceForJump += fmulAdderPerFrame * Time.deltaTime;
             if (VerticalForceForJump >= 800)
                 VerticalForceForJump = 800;
-            Debug.Log(VerticalForceForJump);
+            //Debug.Log(VerticalForceForJump);
         }
         else
         {

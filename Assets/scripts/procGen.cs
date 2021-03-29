@@ -30,6 +30,18 @@ public class procGen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (nextMil <= transform.position.x)
+        {
+            nextMil = CurrDrawPos;
+            for (int i = 0; i < 20; i++)
+            {
+                GameObject instance = (GameObject)Instantiate(preF, new Vector3(CurrDrawPos, -15, 0), new Quaternion());
+                plat.Enqueue(instance);
+                Destroy(plat.Dequeue());
+                CurrDrawPos += Random.Range(5, 15);
+            }
+        }
+
+
     }
 }

@@ -32,7 +32,7 @@ public class inputJump : MonoBehaviour
             }
             else if (tou.phase == TouchPhase.Ended)
             {
-                isTouched = false;
+                //isTouched = false;
                 JumpThePlayer();
             }
         }
@@ -44,7 +44,7 @@ public class inputJump : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            isMouseDown = false;
+            //isMouseDown = false;
             JumpThePlayer();
         }
 
@@ -64,12 +64,14 @@ public class inputJump : MonoBehaviour
 
     }
 
+
     public void JumpThePlayer()
     {
-        if (rb != null)
+        if (rb != null && (isMouseDown || isTouched))
         {
             //Debug.Log("ffffffffffffffffffff");
             rb.AddForce(new Vector2(VerticalForceForJump/2, VerticalForceForJump));
+            isTouched = isMouseDown = false;
         }
     }
 }

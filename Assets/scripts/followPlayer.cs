@@ -17,7 +17,7 @@ public class followPlayer : MonoBehaviour
     void Update()
     {
         cam.orthographicSize = 10 + (player.transform.position.y-3.5f)/2;
-        Debug.Log(cam.orthographicSize);
+        //Debug.Log(cam.orthographicSize);
         //cam.fieldOfView;
         if (player != null)
         {

@@ -16,6 +16,7 @@ public class menuScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score = globalVar.score;
+        score.text = globalVar.score.ToString();
+
     }
 }

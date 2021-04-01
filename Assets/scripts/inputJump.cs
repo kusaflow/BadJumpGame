@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class inputJump : MonoBehaviour
 {
 
-    bool isTouched;
-    bool isMouseDown;
-    float VerticalForceForJump= 0;
+    public Animator tran1;
+    public float animDuration = 1;
+
+    public bool isTouched;
+    public bool isMouseDown;
+    public float VerticalForceForJump= 0;
 
     public Rigidbody2D rb;
     public float fmulAdderPerFrame = 20;
@@ -23,6 +27,12 @@ public class inputJump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (transform.position.y <= -10)
+        {
+            loadLevel();
+        }
+
         if (Input.touchCount > 0)
         {
             Touch tou = Input.GetTouch(0);
@@ -73,5 +83,20 @@ public class inputJump : MonoBehaviour
             rb.AddForce(new Vector2(VerticalForceForJump/2, VerticalForceForJump));
             isTouched = isMouseDown = false;
         }
+    }
+
+    public void loadLevel()
+    {
+        StartCoroutine(loadTheLevel());
+    }
+
+    IEnumerator loadTheLevel()
+    {
+        tran1.SetTrigger("start");
+
+        yield return new WaitForSeconds(animDuration);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
     }
 }

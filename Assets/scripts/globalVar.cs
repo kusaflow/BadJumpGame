@@ -6,15 +6,12 @@ public class globalVar : MonoBehaviour
 {
     public static int score = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static int prevScene;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //setting screen
+    public static int MainMenuScreenIdx = 1;
+
+    //CharacterIdx
+    public static int charIdx = 0;
+
 }

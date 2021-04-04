@@ -7,6 +7,7 @@ public class ChangeScene : MonoBehaviour
 {
 
     public int SceneNo;
+    public bool changeToPrevS = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,9 @@ public class ChangeScene : MonoBehaviour
 
     public void ToScene()
     {
-        SceneManager.LoadScene(SceneNo);
+        if (changeToPrevS)
+            SceneManager.LoadScene(globalVar.prevScene);
+        else
+            SceneManager.LoadScene(SceneNo);
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class procGen : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class procGen : MonoBehaviour
             plat.Enqueue(instance);
             CurrDrawPos += Random.Range(5, 15);
         }
+        globalVar.prevScene = SceneManager.GetActiveScene().buildIndex;
     }
 
     // Update is called once per frame
@@ -32,6 +34,7 @@ public class procGen : MonoBehaviour
     {
 
         globalVar.score = (int)transform.position.x;
+        
         if (nextMil <= transform.position.x)
         {
             nextMil = CurrDrawPos;

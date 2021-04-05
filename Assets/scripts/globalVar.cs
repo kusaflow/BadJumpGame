@@ -9,9 +9,9 @@ public class globalVar : MonoBehaviour
     public static int prevScene;
 
     //setting screen
-    public static int MainMenuScreenIdx = 1;
-
+    public static int MainMenuScreenIdx = 0;
+     
     //CharacterIdx
-    public static int charIdx = 0;
+    public static int charIdx = 1;
 
 }

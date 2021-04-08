@@ -16,12 +16,18 @@ public class inputJump : MonoBehaviour
     public Rigidbody2D rb;
     public float fmulAdderPerFrame = 20;
 
+    //audio
+    public GameObject fireball;
+    public AudioSource source;
+    public AudioSource itsOver;
+
     // Start is called before the first frame update
     void Start()
     {
         isTouched = false;
         isMouseDown = false;
         VerticalForceForJump = 0;
+
     }
 
     // Update is called once per frame
@@ -30,6 +36,7 @@ public class inputJump : MonoBehaviour
 
         if (transform.position.y <= -10)
         {
+            //itsOver.Play();
             loadLevel();
         }
 
@@ -87,11 +94,14 @@ public class inputJump : MonoBehaviour
 
     public void loadLevel()
     {
+        
         StartCoroutine(loadTheLevel());
     }
 
     IEnumerator loadTheLevel()
     {
+       
+
         tran1.SetTrigger("start");
 
         yield return new WaitForSeconds(animDuration);
@@ -99,4 +109,11 @@ public class inputJump : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
+
+    
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        source.Play();
+    }
+
 }

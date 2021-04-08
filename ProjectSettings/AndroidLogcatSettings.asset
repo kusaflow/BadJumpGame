@@ -1,10 +1,10 @@
 {
     "m_SelectedDeviceId": "3201fd50b10a162f",
     "m_SelectedPackage": {
-        "deviceId": "3201fd50b10a162f",
-        "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 25046,
-        "exited": true
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
+        "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
@@ -24,13 +24,19 @@
             "deviceId": "3201fd50b10a162f",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 6868,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "3201fd50b10a162f",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 25046,
             "exited": true
+        },
+        {
+            "deviceId": "3201fd50b10a162f",
+            "name": "com.sec.android.app.launcher",
+            "processId": 7802,
+            "exited": false
         }
     ],
     "m_Tags": {

@@ -12,12 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/playScreen.unity
     guid: c0692a232c4409240be7a4025e27c2f6
   - enabled: 1
-    path: Assets/Scenes/mainGame.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/selectingStage.unity
+    guid: b1c7f3bcf48b9e647ac10b2a8c8e1625
   - enabled: 1
     path: Assets/Scenes/scoreCard.unity
     guid: 2d20e06b2156a9644b5cd6732df876dd
   - enabled: 1
     path: Assets/Scenes/credits.unity
     guid: 5a40814877982914484c61bedb228ac1
+  - enabled: 1
+    path: Assets/Scenes/stages/temp.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

@@ -17,7 +17,6 @@ public class inputJump : MonoBehaviour
     public float fmulAdderPerFrame = 20;
 
     //audio
-    public GameObject fireball;
     public AudioSource source;
     public AudioSource itsOver;
 
@@ -113,7 +112,8 @@ public class inputJump : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D col)
     {
-        source.Play();
+        if (source)
+            source.Play();
     }
 
 }

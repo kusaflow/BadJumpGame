@@ -10,6 +10,8 @@ public class autoBG : MonoBehaviour
     float nextMilestone = 200;
     float posAdder = 20.4f;
 
+    public float ypos = 0;
+
     Queue<GameObject> bgQ = new Queue<GameObject>();
 
 
@@ -19,7 +21,7 @@ public class autoBG : MonoBehaviour
     {
         for (int i =0; i< 16; i++)
         {
-            GameObject bg = (GameObject)Instantiate(bg1, new Vector3(CurdrawPos, 0, 10), new Quaternion());
+            GameObject bg = (GameObject)Instantiate(bg1, new Vector3(CurdrawPos, ypos, 10), new Quaternion());
             bgQ.Enqueue(bg);
 
             CurdrawPos += posAdder;
@@ -35,7 +37,7 @@ public class autoBG : MonoBehaviour
             nextMilestone = CurdrawPos;
             for (int i = 0; i < 5; i++)
             {
-                GameObject bg = (GameObject)Instantiate(bg1, new Vector3(CurdrawPos, 0, 10), new Quaternion());
+                GameObject bg = (GameObject)Instantiate(bg1, new Vector3(CurdrawPos, ypos, 10), new Quaternion());
                 bgQ.Enqueue(bg);
                 Destroy(bgQ.Dequeue());
                 CurdrawPos += posAdder;

@@ -113,7 +113,9 @@ public class inputJump : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         if (source)
-            source.Play();
+        {
+            //source.Play();
+        }
     }
 
 }

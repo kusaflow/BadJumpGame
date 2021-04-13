@@ -6,12 +6,28 @@ public class ProcGen_01 : MonoBehaviour
 {
     /*
     //6 stages-----------------------------------------------------
-    1. normal same level Plats
-    2. z upDowm 
-    3. breakable plats 
-    4. jumpers
-    5. movable upDown 
-    6. movable sideways
+    1.
+    normal same level Plats
+
+    2.
+    z upDowm 
+    
+    3.
+    breakable plats 
+    jumpers
+    
+    4. 
+    movable upDown 
+    movable sideways
+    
+    5. 
+    clappers that close on time
+    seaSaw
+
+    6.
+    spiky plats
+
+
     
 
     //Powers
@@ -22,6 +38,9 @@ public class ProcGen_01 : MonoBehaviour
     float nextMil = 100;
     float CurrDrawPos = 0;
     public GameObject preF;
+    public GameObject Jumper;
+    public GameObject breakable;
+
 
     Queue<GameObject> plat = new Queue<GameObject>();
 
@@ -31,12 +50,47 @@ public class ProcGen_01 : MonoBehaviour
     {
         CurrDrawPos = 5;
         nextMil = 200;
+
         for (int i = 0; i < 30; i++)
         {
-            GameObject instance = (GameObject)Instantiate(preF, new Vector3(CurrDrawPos, -15, 0), new Quaternion());
+            GameObject instance = (GameObject)Instantiate(breakable, new Vector3(CurrDrawPos, Random.Range(-10, -5), 0), new Quaternion());
             plat.Enqueue(instance);
             CurrDrawPos += Random.Range(5, 15);
         }
+
+        /*
+        //1==============================
+        for (int i = 0; i < 30; i++)
+        {
+            GameObject instance = (GameObject)Instantiate(preF, new Vector3(CurrDrawPos, -5, 0), new Quaternion());
+            plat.Enqueue(instance);
+            CurrDrawPos += Random.Range(5, 15);
+        }
+        ---------------------------------------
+
+        2===================================================
+        for (int i = 0; i < 30; i++)
+        {
+            GameObject instance = (GameObject)Instantiate(preF, new Vector3(CurrDrawPos, Random.Range(-10, 0), 0), new Quaternion());
+            plat.Enqueue(instance);
+            CurrDrawPos += Random.Range(8, 15);
+        }
+        //--------------------------------------------------
+
+        //3======================================================
+        //jumper
+         for (int i = 0; i < 30; i++)
+        {
+            GameObject instance = (GameObject)Instantiate(Jumper, new Vector3(CurrDrawPos, Random.Range(-10, -5), 0), new Quaternion());
+            plat.Enqueue(instance);
+            CurrDrawPos += Random.Range(5, 15);
+        }
+
+
+        //breakable
+
+        //------------------------------------------------------
+        */
     }
 
     // Update is called once per frame

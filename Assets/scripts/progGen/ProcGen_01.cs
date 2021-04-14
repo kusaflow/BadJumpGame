@@ -18,11 +18,9 @@ public class ProcGen_01 : MonoBehaviour
     
     4. 
     movable upDown 
-    movable sideways
     
-    5. 
-    clappers that close on time
-    seaSaw
+    5.
+    push BackWard
 
     6.
     spiky plats
@@ -40,6 +38,8 @@ public class ProcGen_01 : MonoBehaviour
     public GameObject preF;
     public GameObject Jumper;
     public GameObject breakable;
+    public GameObject upDownPlat;
+    public GameObject backPush;
 
 
     Queue<GameObject> plat = new Queue<GameObject>();
@@ -53,7 +53,7 @@ public class ProcGen_01 : MonoBehaviour
 
         for (int i = 0; i < 30; i++)
         {
-            GameObject instance = (GameObject)Instantiate(breakable, new Vector3(CurrDrawPos, Random.Range(-10, -5), 0), new Quaternion());
+            GameObject instance = (GameObject)Instantiate(preF, new Vector3(CurrDrawPos, Random.Range(-10, 0), 0), new Quaternion());
             plat.Enqueue(instance);
             CurrDrawPos += Random.Range(5, 15);
         }
@@ -88,8 +88,27 @@ public class ProcGen_01 : MonoBehaviour
 
 
         //breakable
-
+        for (int i = 0; i < 30; i++)
+        {
+            GameObject instance = (GameObject)Instantiate(breakable, new Vector3(CurrDrawPos, Random.Range(-10, -5), 0), new Quaternion());
+            plat.Enqueue(instance);
+            CurrDrawPos += Random.Range(5, 15);
+        }
         //------------------------------------------------------
+        
+        //4=====================================================================
+         for (int i = 0; i < 30; i++)
+        {
+            GameObject instance = (GameObject)Instantiate(upDownPlat, new Vector3(CurrDrawPos, -5, 0), new Quaternion());
+            plat.Enqueue(instance);
+            CurrDrawPos += Random.Range(5, 15);
+        }
+        //----------------------------------------------------------------------\
+
+        //5 ========================================================================
+
+
+        //-------------------------------------------------------------------------
         */
     }
 

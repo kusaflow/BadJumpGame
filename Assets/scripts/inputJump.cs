@@ -9,6 +9,9 @@ public class inputJump : MonoBehaviour
     public Animator tran1;
     public float animDuration = 1;
 
+
+    public Animator continueAnim;
+
     public bool isTouched;
     public bool isMouseDown;
     public float VerticalForceForJump= 0;
@@ -35,8 +38,15 @@ public class inputJump : MonoBehaviour
 
         if (transform.position.y <= -10)
         {
+            rb.bodyType = RigidbodyType2D.Static;
+            transform.position = new Vector3(transform.position.x, -9, transform.position.z);
+            continueAnim.SetTrigger("playerGaya");
+        }
+
+        if (transform.position.y <= -10)
+        {
             //itsOver.Play();
-            loadLevel();
+            //loadLevel();
         }
 
         if (Input.touchCount > 0)

@@ -23,7 +23,8 @@ public class ProcGen_01 : MonoBehaviour
     push BackWard
 
     6.
-    spiky plats
+    round top
+    triangle top
 
 
     
@@ -32,6 +33,65 @@ public class ProcGen_01 : MonoBehaviour
 
     //=============================================================
     */
+
+    /*
+    //1==============================
+    for (int i = 0; i < 30; i++)
+    {
+        GameObject instance = (GameObject)Instantiate(preF, new Vector3(CurrDrawPos, -5, 0), new Quaternion());
+        plat.Enqueue(instance);
+        CurrDrawPos += Random.Range(5, 15);
+    }
+    ---------------------------------------
+
+    2===================================================
+    for (int i = 0; i < 30; i++)
+    {
+        GameObject instance = (GameObject)Instantiate(preF, new Vector3(CurrDrawPos, Random.Range(-10, 0), 0), new Quaternion());
+        plat.Enqueue(instance);
+        CurrDrawPos += Random.Range(8, 15);
+    }
+    //--------------------------------------------------
+
+    //3======================================================
+    //jumper
+     for (int i = 0; i < 30; i++)
+    {
+        GameObject instance = (GameObject)Instantiate(Jumper, new Vector3(CurrDrawPos, Random.Range(-10, -5), 0), new Quaternion());
+        plat.Enqueue(instance);
+        CurrDrawPos += Random.Range(5, 15);
+    }
+
+
+    //breakable
+    for (int i = 0; i < 30; i++)
+    {
+        GameObject instance = (GameObject)Instantiate(breakable, new Vector3(CurrDrawPos, Random.Range(-10, -5), 0), new Quaternion());
+        plat.Enqueue(instance);
+        CurrDrawPos += Random.Range(5, 15);
+    }
+    //------------------------------------------------------
+
+    //4=====================================================================
+     for (int i = 0; i < 30; i++)
+    {
+        GameObject instance = (GameObject)Instantiate(upDownPlat, new Vector3(CurrDrawPos, -5, 0), new Quaternion());
+        plat.Enqueue(instance);
+        CurrDrawPos += Random.Range(5, 15);
+    }
+    //----------------------------------------------------------------------\
+
+    //5 ========================================================================
+    for (int i = 0; i < 30; i++)
+    {
+        GameObject instance = (GameObject)Instantiate(preF, new Vector3(CurrDrawPos, Random.Range(-10, 0), 0), new Quaternion());
+        plat.Enqueue(instance);
+        CurrDrawPos += Random.Range(5, 15);
+    }
+
+    //-------------------------------------------------------------------------
+    */
+
 
     float nextMil = 100;
     float CurrDrawPos = 0;
@@ -48,69 +108,20 @@ public class ProcGen_01 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CurrDrawPos = 5;
+        CurrDrawPos = 15;
         nextMil = 200;
 
-        for (int i = 0; i < 30; i++)
+
+        int GenBracket = 5; 
+
+        for (int i=0; i < 30; i++)
         {
-            GameObject instance = (GameObject)Instantiate(preF, new Vector3(CurrDrawPos, Random.Range(-10, 0), 0), new Quaternion());
-            plat.Enqueue(instance);
-            CurrDrawPos += Random.Range(5, 15);
+            int ToDraw = Random.Range(1, GenBracket + 1);
+            SpawnBlock(ToDraw);
         }
-
-        /*
-        //1==============================
-        for (int i = 0; i < 30; i++)
-        {
-            GameObject instance = (GameObject)Instantiate(preF, new Vector3(CurrDrawPos, -5, 0), new Quaternion());
-            plat.Enqueue(instance);
-            CurrDrawPos += Random.Range(5, 15);
-        }
-        ---------------------------------------
-
-        2===================================================
-        for (int i = 0; i < 30; i++)
-        {
-            GameObject instance = (GameObject)Instantiate(preF, new Vector3(CurrDrawPos, Random.Range(-10, 0), 0), new Quaternion());
-            plat.Enqueue(instance);
-            CurrDrawPos += Random.Range(8, 15);
-        }
-        //--------------------------------------------------
-
-        //3======================================================
-        //jumper
-         for (int i = 0; i < 30; i++)
-        {
-            GameObject instance = (GameObject)Instantiate(Jumper, new Vector3(CurrDrawPos, Random.Range(-10, -5), 0), new Quaternion());
-            plat.Enqueue(instance);
-            CurrDrawPos += Random.Range(5, 15);
-        }
-
-
-        //breakable
-        for (int i = 0; i < 30; i++)
-        {
-            GameObject instance = (GameObject)Instantiate(breakable, new Vector3(CurrDrawPos, Random.Range(-10, -5), 0), new Quaternion());
-            plat.Enqueue(instance);
-            CurrDrawPos += Random.Range(5, 15);
-        }
-        //------------------------------------------------------
-        
-        //4=====================================================================
-         for (int i = 0; i < 30; i++)
-        {
-            GameObject instance = (GameObject)Instantiate(upDownPlat, new Vector3(CurrDrawPos, -5, 0), new Quaternion());
-            plat.Enqueue(instance);
-            CurrDrawPos += Random.Range(5, 15);
-        }
-        //----------------------------------------------------------------------\
-
-        //5 ========================================================================
-
-
-        //-------------------------------------------------------------------------
-        */
-    }
+         
+    
+    } 
 
     // Update is called once per frame
     void Update()
@@ -133,4 +144,71 @@ public class ProcGen_01 : MonoBehaviour
             }
         }
     }
+
+
+    void SpawnBlock(int idx)
+    {
+
+        if (idx == 1)
+        {
+            //1==============================
+            
+            GameObject instance = (GameObject)Instantiate(preF, new Vector3(CurrDrawPos, -5, 0), new Quaternion());
+            plat.Enqueue(instance);
+            CurrDrawPos += Random.Range(5, 15);
+            
+            //---------------------------------------
+        }
+        else if (idx == 2)
+        {
+            //2===================================================
+            GameObject instance = (GameObject)Instantiate(preF, new Vector3(CurrDrawPos, Random.Range(-10, 0), 0), new Quaternion());
+            plat.Enqueue(instance);
+            CurrDrawPos += Random.Range(8, 15);
+            
+            //--------------------------------------------------
+        }
+        else if (idx == 3)
+        {
+            if ((int)(Random.Range(1, 21)) % 2 == 0)
+            {
+                //3======================================================
+                //jumper
+                
+                GameObject instance = (GameObject)Instantiate(Jumper, new Vector3(CurrDrawPos, Random.Range(-10, -5), 0), new Quaternion());
+                plat.Enqueue(instance);
+                CurrDrawPos += Random.Range(5, 15);
+                
+            }
+            else
+            {
+                //breakable
+                GameObject instance = (GameObject)Instantiate(breakable, new Vector3(CurrDrawPos, Random.Range(-10, -5), 0), new Quaternion());
+                plat.Enqueue(instance);
+                CurrDrawPos += Random.Range(5, 15);
+                
+            }
+            //------------------------------------------------------
+        }
+        else if (idx == 4)
+        {
+            //4=====================================================================
+            GameObject instance = (GameObject)Instantiate(upDownPlat, new Vector3(CurrDrawPos, -5, 0), new Quaternion());
+            plat.Enqueue(instance);
+            CurrDrawPos += Random.Range(5, 15);
+            //----------------------------------------------------------------------\
+        }
+        else if (idx == 5)
+        {
+            //5 ========================================================================
+            GameObject instance = (GameObject)Instantiate(backPush, new Vector3(CurrDrawPos, Random.Range(-10, 0), 0), new Quaternion());
+            plat.Enqueue(instance);
+            CurrDrawPos += Random.Range(8, 15);
+            
+
+            //-------------------------------------------------------------------------
+        }
+    }
+
+
 }

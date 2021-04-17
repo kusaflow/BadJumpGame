@@ -111,16 +111,14 @@ public class ProcGen_01 : MonoBehaviour
         CurrDrawPos = 15;
         nextMil = 200;
 
-
-        int GenBracket = 5; 
-
-        for (int i=0; i < 30; i++)
+        for (int i = 0; i < 30; i++)
         {
-            int ToDraw = Random.Range(1, GenBracket + 1);
+            int ToDraw = Random.Range(1, 2);
             SpawnBlock(ToDraw);
         }
-         
-    
+
+
+
     } 
 
     // Update is called once per frame
@@ -128,11 +126,29 @@ public class ProcGen_01 : MonoBehaviour
     {
         if (nextMil <= transform.position.x)
         {
-            int typeToGen = 1;
+            nextMil = CurrDrawPos;
+            /*
+             * 1. 15 - 250 
+             * 2. 250 - 500
+             * 3. 500 - 800
+             * 4. 800 - 1100
+             * 5. 1200 - 1500
+             * 6. 1500 - 1900
+             * 1900- infinite
+             * 
+             */
+            
 
-            //set typrToGen
 
 
+            for (int i = 0; i < 10; i++)
+            {
+                int ToDraw = Random.Range(1, GetSpawnGenBracker() + 1);
+                SpawnBlock(ToDraw);
+                Destroy(plat.Dequeue());
+            }
+
+            /*
             typeToGen = Random.Range(1, typeToGen+1);
             nextMil = CurrDrawPos;
             for (int i = 0; i < 10; i++)
@@ -142,9 +158,44 @@ public class ProcGen_01 : MonoBehaviour
                 Destroy(plat.Dequeue());
                 CurrDrawPos += Random.Range(5, 15);
             }
+            */
         }
     }
 
+    public int GetSpawnGenBracker ()
+    {
+        int GenBracket = 5;
+        if (CurrDrawPos <= 250)
+        {
+            GenBracket = 1;
+        }
+        else if (CurrDrawPos <= 500)
+        {
+            GenBracket = 2;
+        }
+        else if (CurrDrawPos <= 800)
+        {
+            GenBracket = 3;
+        }
+        else if (CurrDrawPos <= 1100)
+        {
+            GenBracket = 4;
+        }
+        else if (CurrDrawPos <= 1500)
+        {
+            GenBracket = 5;
+        }
+        else if (CurrDrawPos <= 1900)
+        {
+            GenBracket = 6;
+        }
+        else
+        {
+            GenBracket = 7;
+        }
+
+        return GenBracket;
+    }
 
     void SpawnBlock(int idx)
     {
@@ -198,7 +249,7 @@ public class ProcGen_01 : MonoBehaviour
             CurrDrawPos += Random.Range(5, 15);
             //----------------------------------------------------------------------\
         }
-        else if (idx == 5)
+        else if (idx >= 5)
         {
             //5 ========================================================================
             GameObject instance = (GameObject)Instantiate(backPush, new Vector3(CurrDrawPos, Random.Range(-10, 0), 0), new Quaternion());

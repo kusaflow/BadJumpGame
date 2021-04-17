@@ -34,7 +34,7 @@ public class InGameImageAlpa : MonoBehaviour
             {
                 funnyAdder = Random.Range(-.1f, .1f);
             }
-            col.a = imJ.VerticalForceForJump / 1200 + funnyAdder;
+            col.a = imJ.VerticalForceForJump / 1300 + funnyAdder;
         }
 
         img.color = col;

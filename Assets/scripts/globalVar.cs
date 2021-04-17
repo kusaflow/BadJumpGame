@@ -14,4 +14,10 @@ public class globalVar : MonoBehaviour
     //CharacterIdx
     public static int charIdx = 1;
 
+
+
+    //advertisment
+    public static string gameId = "4078545";
+    public static bool AdtestMode = true; 
+
 }

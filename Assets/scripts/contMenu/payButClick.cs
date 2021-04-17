@@ -9,6 +9,10 @@ public class payButClick : MonoBehaviour
     public Animator continueAnim;
 
     // Start is called before the first frame update
+
+    
+
+
     public void payCLick()
     {
         //

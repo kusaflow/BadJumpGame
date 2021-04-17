@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class inputJump : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class inputJump : MonoBehaviour
     public AudioSource source;
     public AudioSource itsOver;
 
+    public int NextLevelToLoad = 3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,13 +45,7 @@ public class inputJump : MonoBehaviour
             transform.position = new Vector3(transform.position.x, -9, transform.position.z);
             continueAnim.SetTrigger("playerGaya");
         }
-
-        if (transform.position.y <= -10)
-        {
-            //itsOver.Play();
-            //loadLevel();
-        }
-
+        
         if (Input.touchCount > 0)
         {
             Touch tou = Input.GetTouch(0);
@@ -115,7 +112,7 @@ public class inputJump : MonoBehaviour
 
         yield return new WaitForSeconds(animDuration);
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(NextLevelToLoad);
 
     }
 

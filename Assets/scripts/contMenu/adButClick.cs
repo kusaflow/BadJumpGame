@@ -12,6 +12,9 @@ public class adButClick : MonoBehaviour, IUnityAdsListener
     public Text adM;
 
 
+    public GameObject preF;
+
+
     string mySurfacingId = "Rewarded_Android";
 
     public Color adR;
@@ -52,12 +55,12 @@ public class adButClick : MonoBehaviour, IUnityAdsListener
 
     void Givereward()
     {
-        player.transform.position = new Vector3(player.transform.position.x, 5, player.transform.position.z);
+        Instantiate(preF, new Vector3(player.transform.position.x, 0, 0), new Quaternion());
+
+        player.transform.position = new Vector3(player.transform.position.x, 18, player.transform.position.z);
         player.rb.bodyType = RigidbodyType2D.Dynamic;
-
+        player.VerticalForceForJump = 0;
         continueAnim.SetTrigger("cont");
-
-
     }
 
     public void ShowRewardedVideo()
@@ -126,4 +129,6 @@ public class adButClick : MonoBehaviour, IUnityAdsListener
     {
         Advertisement.RemoveListener(this);
     }
+
+    
 }

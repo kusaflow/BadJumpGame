@@ -18,25 +18,28 @@ public class InGameImageAlpa : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Color col = img.color;
+        if (imJ.rb.bodyType != RigidbodyType2D.Static)
+        {
+            Color col = img.color;
 
-        if (!imJ.isMouseDown && !imJ.isTouched)
-        {
-            if (col.a > 0)
-                col.a -= 3 * Time.deltaTime ;
-            if (col.a <= 0)
-                col.a = 0;
-        }
-        else
-        {
-            float funnyAdder = 0;
-            if (imJ.VerticalForceForJump >= 800)
+            if (!imJ.isMouseDown && !imJ.isTouched)
             {
-                funnyAdder = Random.Range(-.1f, .1f);
+                if (col.a > 0)
+                    col.a -= 3 * Time.deltaTime;
+                if (col.a <= 0)
+                    col.a = 0;
             }
-            col.a = imJ.VerticalForceForJump / 1300 + funnyAdder;
-        }
+            else
+            {
+                float funnyAdder = 0;
+                if (imJ.VerticalForceForJump >= 800)
+                {
+                    funnyAdder = Random.Range(-.1f, .1f);
+                }
+                col.a = imJ.VerticalForceForJump / 1300 + funnyAdder;
+            }
 
-        img.color = col;
+            img.color = col;
+        }
     }
 }

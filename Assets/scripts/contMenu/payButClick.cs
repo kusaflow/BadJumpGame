@@ -8,18 +8,27 @@ public class payButClick : MonoBehaviour
     public inputJump player;
     public Animator continueAnim;
 
+    public GameObject preF;
+
     // Start is called before the first frame update
 
-    
+
 
 
     public void payCLick()
     {
         //
-        player.transform.position = new Vector3(player.transform.position.x, 5, player.transform.position.z);
+        resetPlayer();
+
+    }
+
+    public void resetPlayer()
+    {
+        Instantiate(preF, new Vector3(player.transform.position.x, 0, 0), new Quaternion());
+
+        player.transform.position = new Vector3(player.transform.position.x, 18, player.transform.position.z);
         player.rb.bodyType = RigidbodyType2D.Dynamic;
-
+        player.VerticalForceForJump = 0;
         continueAnim.SetTrigger("cont");
-
     }
 }

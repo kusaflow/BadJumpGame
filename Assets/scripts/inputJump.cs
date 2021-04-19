@@ -100,8 +100,49 @@ public class inputJump : MonoBehaviour
 
     public void loadLevel()
     {
-        
+        updateSaveData();
+        saveloadOperations.saveToFile();
         StartCoroutine(loadTheLevel());
+    }
+
+    private void updateSaveData ()
+    {
+        if (!globalVar.sd.s1_hasB1 && transform.position.x >= 250)
+        {
+            globalVar.sd.s1_hasB1 = true;
+        }
+        if (!globalVar.sd.s1_hasB2 && transform.position.x >= 500)
+        {
+            globalVar.sd.s1_hasB2 = true;
+        }
+        if (!globalVar.sd.s1_hasB3 && transform.position.x >= 800)
+        {
+            globalVar.sd.s1_hasB3 = true;
+        }
+        if (!globalVar.sd.s1_hasB4 && transform.position.x >= 1100)
+        {
+            globalVar.sd.s1_hasB4 = true;
+        }
+        if (!globalVar.sd.s1_hasB5 && transform.position.x >= 1500)
+        {
+            globalVar.sd.s1_hasB5 = true;
+        }
+        if (!globalVar.sd.s1_hasB6 && transform.position.x >= 1900)
+        {
+            globalVar.sd.s1_hasB6 = true;
+        }
+
+        int prog = 0;
+        if (transform.position.x >= 1900)
+            prog = 100;
+        else
+            prog = (int)(transform.position.x* 100 / 1900);
+
+        if (globalVar.sd.s1_progress < prog)
+            globalVar.sd.s1_progress = prog;
+
+        Debug.Log(prog);
+
     }
 
     IEnumerator loadTheLevel()

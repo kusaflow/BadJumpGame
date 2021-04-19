@@ -206,7 +206,7 @@ public class ProcGen_01 : MonoBehaviour
             
             GameObject instance = (GameObject)Instantiate(preF, new Vector3(CurrDrawPos, -5, 0), new Quaternion());
             plat.Enqueue(instance);
-            CurrDrawPos += Random.Range(5, 15);
+            CurrDrawPos += Random.Range(6, 15);
             
             //---------------------------------------
         }

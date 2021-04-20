@@ -33,6 +33,7 @@ public class inputJump : MonoBehaviour
         isMouseDown = false;
         VerticalForceForJump = 0;
 
+        globalVar.prevScene = SceneManager.GetActiveScene().buildIndex;
     }
 
     // Update is called once per frame

@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class loadData : MonoBehaviour
@@ -9,6 +8,8 @@ public class loadData : MonoBehaviour
     {
         globalVar.sd = new saveData();
         globalVar.sd = saveloadOperations.LoadToGame();
+
+        Debug.Log(Application.persistentDataPath);
     }
 
     // Update is called once per frame

@@ -17,6 +17,7 @@ public class payButClick : MonoBehaviour
 
     public void payCLick()
     {
+        globalVar.sd.cupcakes -= 100;
         //
         resetPlayer();
 

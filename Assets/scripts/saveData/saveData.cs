@@ -13,9 +13,12 @@ public class saveData
     public bool s1_hasB5 = false;
     public bool s1_hasB6 = false;
 
+    //cupcakes
+    public int cupcakes = 10000;
+
     public saveData()
     {
-
+        
     }
 
 }

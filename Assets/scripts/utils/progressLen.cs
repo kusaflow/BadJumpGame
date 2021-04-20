@@ -10,7 +10,7 @@ public class progressLen : MonoBehaviour
 
     public float startX = 1000;
 
-    public float Tarx = 1900;
+    public float Tarx = 650;
 
     public GameObject player;
     public float playerposTar = 1900;
@@ -23,12 +23,19 @@ public class progressLen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float pos = (Tarx - startX) * player.transform.position.x/1900;
+        if (player.transform.position.x >= 1900)
+        {
+            img.anchoredPosition = new Vector2(Tarx, img.anchoredPosition.y);
+        }
+        else
+        {
+            float pos = (Tarx - startX) * player.transform.position.x / 1900;
 
-        //Debug.Log(pos);
-        //pos *= (Tarx - startX);
-        //pos = pos + startX;
-        pos += startX;
-        img.anchoredPosition = new Vector2( pos, img.anchoredPosition.y);
+            //Debug.Log(pos);
+            //pos *= (Tarx - startX);
+            //pos = pos + startX;
+            pos += startX;
+            img.anchoredPosition = new Vector2(pos, img.anchoredPosition.y);
+        }
     }
 }

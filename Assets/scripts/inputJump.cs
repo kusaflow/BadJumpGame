@@ -39,6 +39,7 @@ public class inputJump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        globalVar.score = (int)transform.position.x;
 
         if (transform.position.y <= -10)
         {
@@ -142,7 +143,9 @@ public class inputJump : MonoBehaviour
         if (globalVar.sd.s1_progress < prog)
             globalVar.sd.s1_progress = prog;
 
-        Debug.Log(prog);
+        globalVar.sd.cupcakes += globalVar.score / 2;
+
+        //Debug.Log(prog);
 
     }
 
@@ -163,7 +166,7 @@ public class inputJump : MonoBehaviour
     {
         if (source)
         {
-            //source.Play();
+            source.Play();
         }
     }
 

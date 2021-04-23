@@ -17,9 +17,12 @@ public class payButClick : MonoBehaviour
 
     public void payCLick()
     {
-        globalVar.sd.cupcakes -= 100;
-        //
-        resetPlayer();
+        if (globalVar.sd.cupcakes >= 100)
+        {
+            globalVar.sd.cupcakes -= 100;
+            //
+            resetPlayer();
+        }
 
     }
 

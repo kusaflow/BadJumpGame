@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "3201fd50b10a162f",
         "name": "com.kunal.mooJump",
-        "processId": 7716,
+        "processId": 21834,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -55,6 +55,18 @@
             "name": "com.kunal.mooJump",
             "processId": 7716,
             "exited": false
+        },
+        {
+            "deviceId": "3201fd50b10a162f",
+            "name": "com.kunal.mooJump",
+            "processId": 26758,
+            "exited": false
+        },
+        {
+            "deviceId": "3201fd50b10a162f",
+            "name": "com.kunal.mooJump",
+            "processId": 21834,
+            "exited": false
         }
     ],
     "m_Tags": {
@@ -98,7 +110,7 @@
             true,
             true,
             true,
-            true,
+            false,
             true,
             true,
             true,

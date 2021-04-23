@@ -18,7 +18,7 @@ public class globalVar : MonoBehaviour
 
     //advertisment
     public static string gameId = "4078545";
-    public static bool AdtestMode = true; 
+    public static bool AdtestMode = false; 
 
     public static saveData sd;
 

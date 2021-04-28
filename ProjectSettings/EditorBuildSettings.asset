@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/stages/scene1.unity
     guid: 6efb42b35968e5b41b0176dc99a79af3
+  - enabled: 1
+    path: Assets/Scenes/stages/_gravity is a myth.unity
+    guid: 6cc1905283b0dc448b390c47a183fc03
   m_configObjects: {}

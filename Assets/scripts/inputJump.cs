@@ -145,6 +145,9 @@ public class inputJump : MonoBehaviour
 
         globalVar.sd.cupcakes += globalVar.score / 2;
 
+        if (globalVar.sd.highScore < transform.position.x)
+            globalVar.sd.highScore = (int)transform.position.x;
+
         //Debug.Log(prog);
 
     }

@@ -16,6 +16,8 @@ public class saveData
     //cupcakes
     public int cupcakes = 0;
 
+    public int highScore = 0;
+
     public saveData()
     {
         

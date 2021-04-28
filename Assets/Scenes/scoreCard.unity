@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eed33cb2dfb98e47ac22b7256dd9349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneNo: 2
+  SceneNo: 1
   changeToPrevS: 0
 --- !u!114 &602969114
 MonoBehaviour:

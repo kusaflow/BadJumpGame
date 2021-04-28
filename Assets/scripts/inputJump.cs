@@ -75,8 +75,15 @@ public class inputJump : MonoBehaviour
 
         //======================================================
 
+       // Debug.Log(rb.velocity.y);
+
         if (isTouched || isMouseDown)
         {
+            if (rb.velocity.y != 0)
+            {
+                VerticalForceForJump = 0;
+            }
+
             VerticalForceForJump += fmulAdderPerFrame * Time.deltaTime;
             if (VerticalForceForJump >= 800)
                 VerticalForceForJump = 800;

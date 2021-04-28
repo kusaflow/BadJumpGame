@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 425198603}
   - component: {fileID: 425198602}
   m_Layer: 0
-  m_Name: Text
+  m_Name: cupcake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -577,7 +577,7 @@ GameObject:
   - component: {fileID: 456884597}
   - component: {fileID: 456884596}
   m_Layer: 0
-  m_Name: Text
+  m_Name: hs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -611,10 +611,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 456884594}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3026acb659247f54ea22158abb4ca219, type: 3}
+  m_Script: {fileID: 11500000, guid: 024115156c406394a944072ff7480c6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cupCake: {fileID: 456884597}
+  hs: {fileID: 456884597}
 --- !u!114 &456884597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1628,7 +1628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eed33cb2dfb98e47ac22b7256dd9349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneNo: 2
+  SceneNo: 6
   changeToPrevS: 0
 --- !u!114 &1339596102
 MonoBehaviour:
